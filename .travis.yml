@@ -17,6 +17,8 @@ matrix:
       go: 1.9
     - os: osx
       go: 1.7
+    - os: osx
+      go: 1.9
 
     # This builder does the PPA upload (and nothing else).
     - os: linux

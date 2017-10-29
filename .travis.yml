@@ -26,7 +26,11 @@ matrix:
         - sudo chmod 666 /dev/fuse
         - sudo chown root:$USER /etc/fuse.conf
         - mkdir -p constellation && cd constellation/
-        - sudo apt-get install -y unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev
+        - sudo apt-get install -y unzip libdb-dev libleveldb-dev zlib1g-dev libtinfo-dev
+        - sudo add-apt-repository ppa:chris-lea/libsodium;
+        - sudo echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list;
+        - sudo echo "deb-src http://ppa.launchpad.net/chris-lea/libsodium/ubuntu trusty main" >> /etc/apt/sources.list;
+        - sudo apt-get install -y libsodium-dev
         - wget https://github.com/jpmorganchase/constellation/releases/download/v0.1.0/constellation-0.1.0-ubuntu1604.tar.xz -O constellation-0.1.0-ubuntu1604.tar.x
         - tar -xf constellation-0.1.0-ubuntu1604.tar.xz
         - chmod +x constellation-0.1.0-ubuntu1604/constellation-node
